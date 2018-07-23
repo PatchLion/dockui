@@ -1,6 +1,12 @@
-#include "Dockui.h"
+﻿#include "Dockui.h"
 
 
-Dockui::Dockui()
+DockUI::Dockui::Dockui(QWidget* parent)
+    : QWidget(parent)
 {
+}
+
+DockUI::DockWidgetType DockUI::Dockui::type()
+ {
+    return DockWidgetType::MainPage;
 }
