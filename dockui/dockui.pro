@@ -63,7 +63,8 @@ SOURCES += \
         dockui.cpp \
         dockui_base.cpp \
         dockui_dockpage.cpp \
-        dockui_tabpage.cpp
+        dockui_tabpage.cpp\
+        dock_guider.cpp
 
 
 HEADERS += \
@@ -72,9 +73,13 @@ HEADERS += \
         $$PWD/../include/dockui_defines.h \
         $$PWD/../include/dockui_base.h \
         dockui_dockpage.h \
+        dock_guider.h \
         dockui_tabpage.h
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
+
+RESOURCES += \
+    resources.qrc

@@ -12,7 +12,6 @@ namespace DockUI
 	};
 
 	//窗口位于父窗口位置
-    /*
 	enum class DockWidgetPos
 	{
 		Top,
@@ -21,7 +20,6 @@ namespace DockUI
 		Bottom,
 		Center,
 	};
-    */
 }
 
 #endif // dockui_defines_h__
