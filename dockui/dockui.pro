@@ -60,21 +60,23 @@ else:TARGET= dockui
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        dockui.cpp \
-        dockui_base.cpp \
-        dockui_dockpage.cpp \
-        dockui_tabpage.cpp\
-        dock_guider.cpp
+        DockUIWindow.cpp \
+        DockUIDockWidget.cpp \
+        DockUIPageWidget.cpp\
+        DockUIGuider.cpp \
+    DockUILayout.cpp
 
 
 HEADERS += \
-        $$PWD/../include/dockui.h \
-        $$PWD/../include/dockui_global.h \
-        $$PWD/../include/dockui_defines.h \
-        $$PWD/../include/dockui_base.h \
-        dockui_dockpage.h \
-        dock_guider.h \
-        dockui_tabpage.h
+        $$PWD/../include/DockUIWindow.h \
+        $$PWD/../include/DockUIGlobal.h \
+        $$PWD/../include/DockUIDefines.h \
+        $$PWD/../include/DockUI.h \
+        DockUIBase.h \
+        DockUIDockWidget.h \
+        DockUIGuider.h \
+        DockUIPageWidget.h \
+        DockUILayout.h
 
 unix {
     target.path = /usr/lib

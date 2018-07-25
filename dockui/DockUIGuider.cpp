@@ -1,4 +1,4 @@
-﻿#include "dock_guider.h"
+﻿#include "DockUIGuider.h"
 #include <QtGui>
 
 
@@ -76,7 +76,7 @@ namespace
     };
 }
 
-DockUI::DockGuider::DockGuider(QWidget* parent /*= nullptr*/)
+DockUI::DockUIGuider::DockUIGuider(QWidget* parent /*= nullptr*/)
 	: QWidget(parent)
 	, m_drawButtons(GuiderButton::AllButtons)
 	, m_drawMode(GuiderMode::NoGuider)
@@ -85,11 +85,11 @@ DockUI::DockGuider::DockGuider(QWidget* parent /*= nullptr*/)
 	setMouseTracking(true);
 }
 
-DockUI::DockGuider::~DockGuider()
+DockUI::DockUIGuider::~DockUIGuider()
 {
 }
 
-void DockUI::DockGuider::setDrawMode(GuiderMode val)
+void DockUI::DockUIGuider::setDrawMode(GuiderMode val)
 {
 	m_drawMode = val;
 
@@ -98,7 +98,7 @@ void DockUI::DockGuider::setDrawMode(GuiderMode val)
 	update();
 }
 
-void DockUI::DockGuider::paintEvent(QPaintEvent*)
+void DockUI::DockUIGuider::paintEvent(QPaintEvent*)
 {
     if (drawMode() == GuiderMode::NoGuider)
     {
@@ -222,14 +222,14 @@ void DockUI::DockGuider::paintEvent(QPaintEvent*)
 	}
 }
 
-void DockUI::DockGuider::resizeEvent(QResizeEvent *event)
+void DockUI::DockUIGuider::resizeEvent(QResizeEvent *event)
 {
 	updateButtonRects();
 	update();
 }
 
 
-void DockUI::DockGuider::mouseMoveEvent(QMouseEvent *event)
+void DockUI::DockUIGuider::mouseMoveEvent(QMouseEvent *event)
 {
 	ButtonRects::const_iterator rectItor = m_buttonRect.begin();
 	for (rectItor; m_buttonRect.end() != rectItor; rectItor++)
@@ -247,7 +247,7 @@ void DockUI::DockGuider::mouseMoveEvent(QMouseEvent *event)
 	update();
 }
 
-void DockUI::DockGuider::updateButtonRects()
+void DockUI::DockUIGuider::updateButtonRects()
 {
 	const int w = width();
 	const int h = height();
@@ -268,14 +268,14 @@ void DockUI::DockGuider::updateButtonRects()
 	m_buttonRect[GuiderButton::CenterButton] = QRect(w/2-ICON_SIZE/2, h / 2 - ICON_SIZE/2, ICON_SIZE, ICON_SIZE);
 }
 
-void DockUI::DockGuider::setDrawButtons(GuiderButtons val)
+void DockUI::DockUIGuider::setDrawButtons(GuiderButtons val)
 {
 	m_drawButtons = val;
 
 	update();
 }
 
-void DockUI::DockGuider::setButtonVisible(GuiderButton button, bool visible)
+void DockUI::DockUIGuider::setButtonVisible(GuiderButton button, bool visible)
 {
 	m_drawButtons.setFlag(button, visible);
 }

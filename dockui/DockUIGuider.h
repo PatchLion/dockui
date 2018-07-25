@@ -1,20 +1,20 @@
-﻿//*******************************************************
-// 文 件 名： dock_guider.h
-// 作    者： DXB
-// 版 本 号： 1.0
-// 创建时间： 2018/07/24 12:57
-// 文件描述： 
-// 其他说明：dock拖动位置指示器
-//*******************************************************
-#ifndef dock_guider_H
-#define dock_guider_H
+﻿/*
+* 文 件 名： DockUIGuider.h
+* 作    者： DXB
+* 版 本 号： 1.0
+* 创建时间： 2018/07/25 13:45
+* 文件描述： dock拖动位置指示器
+* 其他说明：
+*/
+#ifndef DockUIGuider_H
+#define DockUIGuider_H
 
 #include <QWidget>
 #include <QMap>
 
 namespace DockUI
 {
-    class DockGuider : public QWidget
+    class DockUIGuider : public QWidget
     {
         Q_OBJECT
    
@@ -55,8 +55,8 @@ namespace DockUI
 		typedef QMap<GuiderButton, QRect> ButtonRects;
 		
 	public:
-        DockGuider(QWidget* parent = nullptr);
-        ~DockGuider();
+        DockUIGuider(QWidget* parent = nullptr);
+        ~DockUIGuider();
 
 	public:
 		//绘制模式

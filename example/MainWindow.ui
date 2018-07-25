@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="DockUI::Dockui" name="centralWidget"/>
+  <widget class="DockUI::DockUIWindow" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -37,9 +37,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>DockUI::Dockui</class>
+   <class>DockUI::DockUIWindow</class>
    <extends>QWidget</extends>
-   <header>dockui.h</header>
+   <header>DockuiWindow.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
